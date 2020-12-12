@@ -58,7 +58,8 @@ public class Main {
 				try {
 					value = sc.nextInt();
 				} catch( Exception e ) {
-					
+					System.out.println("Oops... try again!");
+					continue;
 				}
 				expenses.add(value);
 				System.out.println("Your value is updated\n");
@@ -72,7 +73,8 @@ public class Main {
 				try {
 					con_choice = sc.nextInt();
 				} catch( Exception e) {
-					
+					System.out.println("Oops... try again!");
+					continue;
 				}
 				if (con_choice == 3) {
 					expenses.clear();
@@ -115,19 +117,19 @@ public class Main {
 		Scanner scan = new Scanner(System.in);
 		try {
 			expense = scan.nextInt();
+			if(arrayList.contains(expense)) {
+				System.out.println("Your expense exist in the list!\n");
+			} else {
+				System.out.println("Your expense doesn't exist in the list\n");
+			}
+			System.out.println(arrayList + "\n");
+
 		} catch(Exception e) {
 			System.out.println("Oops... try again! \n");
-			scan.close();
-			return;
+			
 		}
 		
-		if(arrayList.contains(expense)) {
-			System.out.println("Your expense exist in the list!\n");
-		} else {
-			System.out.println("Your expense doesn't exist in the list\n");
-		}
-		System.out.println(arrayList + "\n");
-		scan.close();
+		
 		
 	}
 
